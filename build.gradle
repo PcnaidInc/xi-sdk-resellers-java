@@ -11,8 +11,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.+'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.11.0'
     }
 }
@@ -25,6 +23,17 @@ sourceSets {
 }
 
 if(hasProperty('target') && target == 'android') {
+
+    buildscript {
+        repositories {
+            mavenCentral()
+            google()
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:2.3.+'
+            classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        }
+    }
 
     apply plugin: 'com.android.library'
     apply plugin: 'com.github.dcendents.android-maven'
