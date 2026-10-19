@@ -12,6 +12,13 @@ Building the API client library requires:
 1. Java 1.8+
 2. Maven (3.8.3+)/Gradle (7.2+)
 
+## CI
+
+Continuous integration is defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+It runs on every pull request targeting `main` and on every push to `main`. Using Maven, it compiles
+the library, runs the test suite, and builds the jar (`mvn -B package`) on Java 8, 11, and 17.
+Runs use read-only repository permissions, and superseded runs on the same branch are cancelled.
+
 ## Installation
 
 To install the API client library to your local Maven repository:
